@@ -48,5 +48,14 @@ if(request.getParameter("men")!=null){
 <input type="submit" name="consultar" value="Consultar"></div>
 </fieldset>
 </form>
+
+<!-- 
+<form action="Producto" method="post" enctype="multipart/form-data">
+<div><label>Archivo: </label><input type="file" name="archivo" value="Examinar"></div>
+<input type="submit" name="cargar" value="Cargar Archivo">
+</form>
+
+-->
+
 </body>
 </html>
