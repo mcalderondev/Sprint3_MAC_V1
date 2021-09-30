@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+.principal {
+   background-image: url('../imagenes/4.png');
+   background-size:cover;
+   display: flex;
+   justify-content: space-between;
+   height: 180px;
+   }
+   .titulo {
+    font-family:Garamond;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+    color: #2c250d;
+    margin-left: 40px;
+}
+li {
+    display: inline;
+    margin-right: 70px;
+}
+a {
+    text-decoration: none;
+    color:rgb(39, 23, 23);
+    font-family: "Courier New";
+    font-size: 22px;
+   
+
+}
+
+body {
+    margin: 0px;
+}
