@@ -38,7 +38,7 @@ public class Productos extends HttpServlet {
 		
 		if (request.getParameter("cargar")!=null) {
 			Part archivo=request.getPart("archivo");
-			String Url= "Macintosh HD/Users/mcalderon/Documents/MINTIC/CICLO 3/equipo04_grupo08-main/Tienda Generica v1/src/main/webapp/Documentos\\";
+			String Url= "/Users/mcalderon/Documents/MINTIC/CICLO 3/equipo04_grupo08-main/Tienda Generica v1/src/main/webapp/Documentos/";
 		
 		try {
 			InputStream file= archivo.getInputStream();

@@ -25,7 +25,7 @@
                         <a href="">Proovedores</a> 
                     </li>
                     <li> 
-                        <a href="">Productos</a> 
+                        <a href="Productos.jsp">Productos</a> 
                     </li>
 </ul>
   </nav>   
