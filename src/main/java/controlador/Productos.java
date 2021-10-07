@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
+import modelo.ProductosDAO;
+
 /**
  * Servlet implementation class Productos
  */
@@ -36,10 +38,14 @@ public class Productos extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ProductosDAO prodDAO= new ProductosDAO();
+		
 		if (request.getParameter("cargar")!=null) {
 			Part archivo=request.getPart("archivo");
 			String Url= "/Users/mcalderon/Documents/MINTIC/CICLO 3/equipo04_grupo08-main/Tienda Generica v1/src/main/webapp/Documentos/";
 		
+		if(archivo.getContentType().equals("application/vnd.ms-excel"))	{
+			
 		try {
 			InputStream file= archivo.getInputStream();
 			File copia = new File (Url+"prueba08.csv");
@@ -52,11 +58,22 @@ public class Productos extends HttpServlet {
 			file.close();
 			escribir.close();
 			JOptionPane.showMessageDialog(null, "Se cargo el archivo correctamente");
-		}catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Error al cargar el archivo correctamente"+e);
-		}
-		
+			if (prodDAO.Cargar_Productos(Url+"prueba08.csv")) {
+				response.sendRedirect("Productos.jsp?men=Se registraron los productos correctamente");
+			}else
+			{
+				response.sendRedirect("Productos.jsp?men=No se registraron los productos");
+			}
+			}catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Error al cargar el archivo correctamente"+e);
+				response.sendRedirect("Productos.jsp?men=Error al cargar el archivo correctamente");
+				
+			}
+			}else
+			{
+				response.sendRedirect("Productos.jsp?men=Formato no permitido");
 	}
 
 }
 }	
+}

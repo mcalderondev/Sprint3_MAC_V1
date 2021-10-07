@@ -92,7 +92,7 @@ public class Usuario extends HttpServlet {
 		if (request.getParameter("eliminar")!=null) {
 			int cedula_usuario;
 			cedula_usuario=Integer.parseInt(request.getParameter("cedula_usuario"));
-			int op=JOptionPane.showConfirmDialog(null, "¿Desea eliminar este usuario?");
+			int op=JOptionPane.showConfirmDialog(null, "ï¿½Desea eliminar este usuario?");
 			if(op==0) {
 				if (userDao.EliminarUsuario(cedula_usuario)) {
 					response.sendRedirect("Usuario.jsp?men=Usuario eliminado.");
