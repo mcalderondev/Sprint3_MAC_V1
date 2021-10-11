@@ -38,14 +38,19 @@ public class Productos extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ProductosDAO prodDAO= new ProductosDAO();
+		
 		
 		if (request.getParameter("cargar")!=null) {
+			
+			JOptionPane.showMessageDialog(null, "PRUEBA");
+			ProductosDAO prodDAO= new ProductosDAO();
 			Part archivo=request.getPart("archivo");
 			String Url= "/Users/mcalderon/Documents/MINTIC/CICLO 3/equipo04_grupo08-main/Tienda Generica v1/src/main/webapp/Documentos/";
 		
-		if(archivo.getContentType().equals("application/vnd.ms-excel"))	{
-			
+		//if(archivo.getContentType().equals("application/vnd.ms-excel"))	{
+			if(archivo.getContentType().equals("text/csv")) {
+			JOptionPane.showMessageDialog(null, archivo.getContentType());
+			JOptionPane.showMessageDialog(null, "PRUEBA 2");	
 		try {
 			InputStream file= archivo.getInputStream();
 			File copia = new File (Url+"prueba08.csv");
