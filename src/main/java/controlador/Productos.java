@@ -15,6 +15,7 @@ import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
 import modelo.ProductosDAO;
+import modelo.ProductosDTO;
 
 /**
  * Servlet implementation class Productos
@@ -37,7 +38,7 @@ public class Productos extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		ProductosDAO prodDao= new ProductosDAO();
 		
 		
 		if (request.getParameter("cargar")!=null) {
@@ -77,8 +78,31 @@ public class Productos extends HttpServlet {
 			}else
 			{
 				response.sendRedirect("Productos.jsp?men=Formato no permitido");
-	}
+			}
 
-}
-}	
+		}
+
+		if (request.getParameter("actualizar")!=null) {
+			int codigo_producto, iva_compra, nitproveedor, precio_compra, precio_venta;
+			String nombre_producto;
+					
+			codigo_producto=Integer.parseInt(request.getParameter("codigo_producto"));
+			iva_compra=Integer.parseInt(request.getParameter("iva_compra"));
+			nitproveedor=Integer.parseInt(request.getParameter("nitproveedor"));
+			precio_compra=Integer.parseInt(request.getParameter("precio_compra"));
+			precio_venta=Integer.parseInt(request.getParameter("precio_venta"));
+			nombre_producto=request.getParameter("nombre_producto");
+
+			ProductosDTO prodDto=new ProductosDTO(codigo_producto, iva_compra, nitproveedor, precio_compra, precio_venta, nombre_producto);
+			if(prodDao.ActualizarProducto(prodDto)) {
+				JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Producto.");
+				response.sendRedirect("Proveedores.jsp?men=Se han actualizado los datos del Proveedor.");
+			}else {
+				JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Producto.");
+				response.sendRedirect("Proveedores.jsp?men=No se pudo modificar los datos del Proveedor.");
+					}
+				}
+		
+		
+	}	
 }

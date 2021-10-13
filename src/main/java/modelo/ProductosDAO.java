@@ -32,5 +32,25 @@ public class ProductosDAO {
 		return resul;
 	
 	}
+
+	public boolean ActualizarProducto(ProductosDTO prod) {
+		boolean result=false;
+		try {
+			String sql="update proveedores set ciudad_proveedor=?,direccion_proveedor=?,nombre_proveedor=?,telefono_proveedor=? where nitproveedor=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, prod.getCodigo_producto());
+			ps.setInt(2, prod.getIva_compra());
+			ps.setInt(3, prod.getPrecio_compra());
+			ps.setInt(4, prod.getPrecio_venta());
+			ps.setInt(5, prod.getNitproveedor());
+			ps.setString(6, prod.getNombre_producto());
+			result=ps.executeUpdate()>0;
+		}catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
+			
+		}
+		return result;
+	}
+	
 	
 }
