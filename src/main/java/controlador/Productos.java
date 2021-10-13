@@ -49,8 +49,8 @@ public class Productos extends HttpServlet {
 			Part archivo=request.getPart("archivo");
 			String Url= "/Users/mcalderon/Documents/MINTIC/CICLO 3/equipo04_grupo08-main/Tienda Generica v1/src/main/webapp/Documentos/";
 		
-		//if(archivo.getContentType().equals("application/vnd.ms-excel"))	{
-			if(archivo.getContentType().equals("text/csv")) {
+		//if(archivo.getContentType().equals("application/vnd.ms-excel"))	//USAR ESTA LINEA EN WINDOWS{
+			if(archivo.getContentType().equals("text/csv")) { // USAR ESTA LINEA EN MAC
 			JOptionPane.showMessageDialog(null, archivo.getContentType());
 			JOptionPane.showMessageDialog(null, "PRUEBA 2");	
 		try {
