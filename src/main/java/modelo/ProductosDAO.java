@@ -18,49 +18,52 @@ public class ProductosDAO {
 	
 	public boolean Cargar_Productos(String URL) {
 		
-		boolean resul=false;
+		boolean result=false;
 		try {
 			
 		String sql="load data infile '"+URL+"' into table productos fields terminated by ',' lines terminated by '\r\n'";	
 		ps = con.prepareStatement(sql);
-		resul=ps.executeUpdate()>0;
+		result=ps.executeUpdate()>0;
 		
 		}catch (SQLException ex) {
 			JOptionPane.showMessageDialog(null,"Error al registrar productos"+ ex);
 		}
 		
-		return resul;
+		return result;
 	
 	}
-
-	public ProductosDTO BuscarProducto(int buscar_cod_producto) {	//
-		ProductosDTO prod=null;
-		try {
-			String sql="select * from productos where codigo_producto=?";
-			ps=con.prepareStatement(sql);
-			ps.setInt(1,buscar_cod_producto);	//
-			res=ps.executeQuery();
-			while(res.next()) {
-				prod=new ProductosDTO(res.getInt(1),res.getInt(2),res.getInt(3),res.getString(4),res.getInt(5),res.getInt(6));
-
-			}
-		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo consultar el producto"+ex);
-		}
-		return prod;
+//==============================================================================
+//	CONSULTAR PRODUCTO		OK
+//==============================================================================
+public ProductosDTO BuscarProducto(int consultar_codigo) {
+ProductosDTO producto=null;
+try {
+	String sql="select * from productos where codigo_producto=?";
+	ps=con.prepareStatement(sql);
+	ps.setInt(1,consultar_codigo);	
+	res=ps.executeQuery();
+	while(res.next()) {
+		producto=new ProductosDTO(res.getInt(1),res.getDouble(2),res.getInt(3),res.getString(4),res.getDouble(5),res.getDouble(6));
 	}
-	
+}catch(SQLException ex){
+	JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente"+ex);
+}
+return producto;
+}
+//==============================================================================	
+
 	public boolean ActualizarProducto(ProductosDTO prod) {
 		boolean result=false;
 		try {
-			String sql="update proveedores set ciudad_proveedor=?,direccion_proveedor=?,nombre_proveedor=?,telefono_proveedor=? where nitproveedor=?";
+			String sql="update productos set ivacompra=?,nitproveedor=?,nombre_producto=?,precio_compra=?, precio_venta where codigo_producto=?";
+			
 			ps=con.prepareStatement(sql);
-			ps.setInt(1, prod.getCodigo_producto());
-			ps.setInt(2, prod.getIva_compra());
-			ps.setInt(3, prod.getNitproveedor());
-			ps.setString(4, prod.getNombre_producto());
-			ps.setInt(5, prod.getPrecio_compra());
-			ps.setInt(6, prod.getPrecio_venta());
+			ps.setDouble(1, prod.getIvacompra());
+			ps.setInt(2, prod.getNitproveedor());
+			ps.setString(3, prod.getNombre_producto());
+			ps.setDouble(4, prod.getPrecio_compra());
+			ps.setDouble(5, prod.getPrecio_venta());
+			ps.setInt(6, prod.getCodigo_producto());
 
 			result=ps.executeUpdate()>0;
 		}catch (SQLException ex) {
@@ -69,6 +72,5 @@ public class ProductosDAO {
 		}
 		return result;
 	}
-	
 	
 }

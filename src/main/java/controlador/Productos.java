@@ -41,7 +41,9 @@ public class Productos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductosDAO prodDao= new ProductosDAO();
 		
-		
+//==============================================================================
+		//cargar archivo
+//==============================================================================		
 		if (request.getParameter("cargar")!=null) {
 			
 			JOptionPane.showMessageDialog(null, "PRUEBA");
@@ -82,50 +84,49 @@ public class Productos extends HttpServlet {
 			}
 
 		}
+//==============================================================================
+		//if (request.getParameter("consultar")!=null) {
+		//	int buscar_cod_producto, iva_compra, nitproveedor, precio_compra, precio_venta;
+		//	String nombre_producto;
+		//	
+		//	buscar_cod_producto=Integer.parseInt(request.getParameter("buscar_cod_producto"));
+		//	ProductosDTO prodDto=prodDao.BuscarProducto(buscar_cod_producto);
+		//	if(prodDto!=null) {
+		//	buscar_cod_producto=prodDto.getCodigo_producto();
+		//	iva_compra=prodDto.getIva_compra();
+		//	nitproveedor=prodDto.getNitproveedor();
+		//	precio_compra=prodDto.getPrecio_compra();
+		//	precio_venta=prodDto.getPrecio_venta();
+		//	nombre_producto=prodDto.getNombre_producto();
+					
+		//	response.sendRedirect("Productos.jsp?buscar_cod_producto="+buscar_cod_producto+"&&iva_compra="+iva_compra+
+		//	"&&nitproveedor="+nitproveedor+"&&precio_compra="+precio_compra+"&&nombre_producto="+nombre_producto);
+					
+	//	}else {
+	//		response.sendRedirect("Proveedores.jsp?men=No se ha encontrado al Proveedor.");
+	//		}
+	//	}
+		
+//		if (request.getParameter("actualizar")!=null) {
+	//		int codigo_producto, iva_compra, nitproveedor, precio_compra, precio_venta;
+	//		String nombre_producto;
+					
+		//	codigo_producto=Integer.parseInt(request.getParameter("codigo_producto"));
+		//	iva_compra=Integer.parseInt(request.getParameter("iva_compra"));
+		//	nitproveedor=Integer.parseInt(request.getParameter("nitproveedor"));
+		//	precio_compra=Integer.parseInt(request.getParameter("precio_compra"));
+		//	precio_venta=Integer.parseInt(request.getParameter("precio_venta"));
+		//	nombre_producto=request.getParameter("nombre_producto");
 
-		if (request.getParameter("consultar")!=null) {
-			int buscar_cod_producto, iva_compra, nitproveedor, precio_compra, precio_venta;
-			String nombre_producto;
-			
-			buscar_cod_producto=Integer.parseInt(request.getParameter("buscar_cod_producto"));
-			ProductosDTO prodDto=prodDao.BuscarProducto(buscar_cod_producto);
-			if(prodDto!=null) {
-			buscar_cod_producto=prodDto.getCodigo_producto();
-			iva_compra=prodDto.getIva_compra();
-			nitproveedor=prodDto.getNitproveedor();
-			precio_compra=prodDto.getPrecio_compra();
-			precio_venta=prodDto.getPrecio_venta();
-			nombre_producto=prodDto.getNombre_producto();
-					
-			response.sendRedirect("Productos.jsp?buscar_cod_producto="+buscar_cod_producto+"&&iva_compra="+iva_compra+
-			"&&nitproveedor="+nitproveedor+"&&precio_compra="+precio_compra+"&&nombre_producto="+nombre_producto);
-					
-		}else {
-			response.sendRedirect("Proveedores.jsp?men=No se ha encontrado al Proveedor.");
-			}
-		}
-		
-		if (request.getParameter("actualizar")!=null) {
-			int codigo_producto, iva_compra, nitproveedor, precio_compra, precio_venta;
-			String nombre_producto;
-					
-			codigo_producto=Integer.parseInt(request.getParameter("codigo_producto"));
-			iva_compra=Integer.parseInt(request.getParameter("iva_compra"));
-			nitproveedor=Integer.parseInt(request.getParameter("nitproveedor"));
-			precio_compra=Integer.parseInt(request.getParameter("precio_compra"));
-			precio_venta=Integer.parseInt(request.getParameter("precio_venta"));
-			nombre_producto=request.getParameter("nombre_producto");
-
-			ProductosDTO prodDto=new ProductosDTO(codigo_producto, iva_compra, nitproveedor, nombre_producto, precio_venta, precio_compra);
-			if(prodDao.ActualizarProducto(prodDto)) {
-				JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Producto.");
-				response.sendRedirect("Proveedores.jsp?men=Se han actualizado los datos del Proveedor.");
-			}else {
-				JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Producto.");
-				response.sendRedirect("Proveedores.jsp?men=No se pudo modificar los datos del Proveedor.");
-					}
-				}
-		
-		
+		//	ProductosDTO prodDto=new ProductosDTO(codigo_producto, iva_compra, nitproveedor, nombre_producto, precio_venta, precio_compra);
+		//	if(prodDao.ActualizarProducto(prodDto)) {
+		//		JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Producto.");
+		//		response.sendRedirect("Proveedores.jsp?men=Se han actualizado los datos del Proveedor.");
+		//	}else {
+		//		JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Producto.");
+			//	response.sendRedirect("Proveedores.jsp?men=No se pudo modificar los datos del Proveedor.");
+			//		}
+			//	}
+//==============================================================================
 	}	
 }
