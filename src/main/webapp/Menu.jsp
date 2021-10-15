@@ -19,10 +19,10 @@
                         <a href="Usuario.jsp">Usuarios</a> 
                     </li>
                     <li> 
-                        <a href="">Clientes</a> 
+                        <a href="Clientes.jsp">Clientes</a> 
                     </li>
                     <li> 
-                        <a href="">Proovedores</a> 
+                        <a href="Proveedores.jsp">Proovedores</a> 
                     </li>
                     <li> 
                         <a href="Productos.jsp">Productos</a> 
