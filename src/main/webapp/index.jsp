@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=>ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <!DOCTYPE html>
     <html>
     <head>
@@ -9,7 +9,7 @@
     </head>
     <body>
     <div>
-        <h1>Bienvenidos a la Tienda Genérica</h1>
+        <h1>Bienvenidos a la Tienda GenÃ©rica</h1>
     </div>
     <form action="login" method="post">
     <br>
@@ -19,8 +19,8 @@
     </div>
     <br>
     <div class="password_form">
-        <label class="title-password">Contraseña</label>
-        <input class="input-title" type="password" name="pass" placeholder="Escriba su contraseña" required>
+        <label class="title-password">ContraseÃ±a</label>
+        <input class="input-title" type="password" name="pass" placeholder="Escriba su contraseÃ±a" required>
     </div>
     <br>
     <div class="botones">
