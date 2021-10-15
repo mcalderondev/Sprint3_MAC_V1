@@ -31,9 +31,9 @@ public class login extends HttpServlet {
 				//JOptionPane.showMessageDialog(null, "Bienvenido");
 				response.sendRedirect("Menu.jsp");
 			}else {
-				JOptionPane.showMessageDialog(null, "Usuario o contraseña errados,\r\n"
+				JOptionPane.showMessageDialog(null, "Usuario o contraseï¿½a errados,\r\n"
 						+ "intente de nuevo.\r\n");
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("index.jsp");
 			}
 		}
 	}
