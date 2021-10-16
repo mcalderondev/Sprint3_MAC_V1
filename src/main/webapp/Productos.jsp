@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="css/Productos.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Productos</title>
 </head>
 <body>
 <%!	
@@ -29,24 +29,67 @@ if(request.getParameter("men")!=null){
 <h1>Productos</h1>
 <form action="Productos" method="post" enctype="multipart/form-data">
 
-<div><label class="negrilla" >Codigo Producto:</label><input type="number" name="codigo_producto" value="<%=buscar_cod_producto%>"></div>
-<div><label class="negrilla" >IVA:</label><input type="number" name="iva_compra" value="<%=iva_compra%>"></div>
-<div><label class="negrilla" >NIT Proveedor:</label><input type="number" name="nitproveedor" value="<%=nitproveedor%>"></div>
-<div><label class="negrilla" >Nombre Producto:</label><input type="text" name="nombre_producto" value="<%=nombre_producto%>"></div>
-<div><label class="negrilla" >Precio Compra:</label><input type="number" name="precio_compra" value="<%=precio_compra%>"></div>
-<div><label class="negrilla" >Precio Venta:</label><input type="number" name="precio_venta" value="<%=precio_venta%>"></div>
+<div class="form-clientes">
+
+<div class="informacion-form">
+		<label class="name-client">Codigo Producto:</label>
+		<input class= "input-caja-texto" type="number" name="codigo_producto" value="<%=buscar_cod_producto%>">
+</div>
+
+
+<div class="informacion-form">
+		<label class="name-client">IVA:</label>
+		<input class= "input-caja-texto" type="number" name="iva_compra" value="<%=iva_compra%>">
+</div>
+
+<div class="informacion-form">
+		<label class="name-client">NIT Proveedor:</label>
+		<input class= "input-caja-texto" type="number" name="nitproveedor" value="<%=nitproveedor%>">
+</div>
+
+<div class="informacion-form">
+		<label class="name-client">Nombre Producto:</label>
+		<input class= "input-caja-texto" type="text" name="nombre_producto" value="<%=nombre_producto%>">
+</div>
+
+<div class="informacion-form">
+		<label class="name-client">Precio Compra:</label>
+		<input class= "input-caja-texto" type="number" name="precio_compra" value="<%=precio_compra%>">
+</div>
+
+<div class="informacion-form">
+		<label class="name-client">Precio Venta:</label>
+		<input class= "input-caja-texto" type="number" name="precio_venta" value="<%=precio_venta%>">
+</div>
+
+<br>
  
-<div><label>Archivo: </label><input type="file" name="archivo" value="Examinar" accept="application/vnd.ms-excel"></div>
-<input type="submit" name="cargar" value="Cargar Archivo">
-<input type="submit" name="actualizar" value="Actualizar">
+<div class="informacion-form">
+		<label class="name-client">Archivo</label>
+		<input type="file" name="archivo" value="Examinar" accept="application/vnd.ms-excel"></div>
+<br>
+<div class="botones">
+
+		<input class="btn-registrar" type="submit" name="cargar" value="Cargar Archivo">
+		<input class="btn-actualizar" type="submit" name="actualizar" value="Actualizar">
+</div>
+</div>
 </form>
 
+<!-- ======================================================================= -->
 <form action="Productos" method="post">
+
+<div class="consultar">
 <fieldset>
-<legend>Consultar Producto</legend>
-<div><label>Codigo Producto:</label><input type="number" name="buscar_cod_producto">
-<input type="submit" name="consultar" value="Consultar"></div>
+		<legend>Consultar Producto</legend>
+<div>
+		<label>Codigo Producto:</label>
+		<input class="input-caja-texto type="number" name="buscar_cod_producto">
+		<input class="btn-consultar" type="submit" name="consultar" value="Consultar">
+	</div>
 </fieldset>
+</div>
+
 </form>
 
 </body>

@@ -12,7 +12,7 @@ public class conexion {
 	
 	public Connection Conecta() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(url,login,password);
 			JOptionPane.showMessageDialog(null,"Conexion OK");
 		}catch(Exception e) {
