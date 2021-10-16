@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/Proveedores.css">
 <meta charset="ISO-8859-1">
 <title>Proveedores</title>
 		<link rel="stylesheet" href="css/Clientes.css">
