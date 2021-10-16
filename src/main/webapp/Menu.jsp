@@ -3,19 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="css/Menu.css">
 <meta charset="ISO-8859-1">
 <title>Menu Tienda</title>
- <link rel="stylesheet" href="css/Menu.css">
+
 </head>
 <body>
 
-<header class="principal">
- <div>
- <h1 class="titulo"> Menú Principal </h1>
- </div>
+<header>
    <nav>
-<ul>
- <li> 
+   <ul>
+   <li>
+            <h1> Menú Principal </h1>
+        </li>
+    
+ 	<li> 
                         <a href="Usuario.jsp">Usuarios</a> 
                     </li>
                     <li> 
@@ -27,8 +29,14 @@
                     <li> 
                         <a href="Productos.jsp">Productos</a> 
                     </li>
+                    <li> 
+                        <a href="Ventas.jsp">Ventas</a> 
+                    </li>
 </ul>
-  </nav>   
+</nav>   
 </header>
+<h1 class="title-body">
+    ¡Bienvenidos!
+</h1>
 </body>
 </html>

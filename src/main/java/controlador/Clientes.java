@@ -34,10 +34,10 @@ public class Clientes extends HttpServlet {
 			telefono_cliente=request.getParameter("telefono_cliente");
 			ClientesDTO clienteDto=new ClientesDTO(cedula_cliente,direccion_cliente,email_cliente,nombre_cliente,telefono_cliente);
 			if (clienteDao.InsertarCliente(clienteDto)) {
-				JOptionPane.showMessageDialog(null,"Registro exitoso");
+				//JOptionPane.showMessageDialog(null,"Registro exitoso");
 				response.sendRedirect("Clientes.jsp");//	redireccionar pagina
 			}else {
-				JOptionPane.showMessageDialog(null,"No se ha registrado al Cliente");
+				//JOptionPane.showMessageDialog(null,"No se ha registrado al Cliente");
 				response.sendRedirect("Clientes.jsp");
 			}
 		}
@@ -79,10 +79,10 @@ public class Clientes extends HttpServlet {
 			telefono_cliente=request.getParameter("telefono_cliente");
 			ClientesDTO clienteDto=new ClientesDTO(cedula_cliente,direccion_cliente,email_cliente,nombre_cliente,telefono_cliente);
 			if(clienteDao.ActualizarCliente(clienteDto)) {
-				JOptionPane.showMessageDialog(null,"Se han actualizado los datos del cliente.");
+				//JOptionPane.showMessageDialog(null,"Se han actualizado los datos del cliente.");
 				response.sendRedirect("Clientes.jsp?men=Se han actualizado los datos del cliente.");
 			}else {
-				JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Usuario.");
+				//JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Usuario.");
 				response.sendRedirect("Clientes.jsp?men=No se pudo modificar los datos del cliente.");
 
 			}
@@ -93,7 +93,7 @@ public class Clientes extends HttpServlet {
 		if (request.getParameter("eliminar")!=null) {
 			int cedula_cliente;
 			cedula_cliente=Integer.parseInt(request.getParameter("cedula_cliente"));
-			int op=JOptionPane.showConfirmDialog(null, "¿Desea eliminar este cliente?");
+			int op=JOptionPane.showConfirmDialog(null, "Â¿Desea eliminar este cliente?");
 			if(op==0) {
 				if (clienteDao.EliminarCliente(cedula_cliente)) {
 					response.sendRedirect("Clientes.jsp?men=Cliente eliminado.");

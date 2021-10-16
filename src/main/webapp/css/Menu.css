@@ -1,32 +1,69 @@
 @charset "ISO-8859-1";
-.principal {
-   background-image: url('../imagenes/4.png');
-   background-size:cover;
-   display: flex;
-   justify-content: space-between;
-   height: 180px;
-   }
-   .titulo {
-    font-family:Garamond;
-    font-size: 50px;
-    font-weight: bold;
-    padding: 20px;
-    color: #2c250d;
-    margin-left: 40px;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
+body{
+    background-image: url('../imagenes/background-menu.jpg');
+    background-size:cover;
+    background-attachment: fixed;
 }
+
+header
+ {
+  margin: 0%;
+   }
+
+  h1{
+    font-family:'Open Sans Condensed', sans-serif;
+    text-align: center;
+    color: #252537;
+    padding-left: 10px;
+    padding-right: 20px;
+  } 
+
+  .title-body{
+      font-size: 150px;
+      color: #fff;
+      text-shadow: 2px 2px 6px black;
+  }
+
+    
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(237, 252, 242, 0.8);
+}
+
 li {
-    display: inline;
-    margin-right: 70px;
+    float: left;
 }
 a {
-    text-decoration: none;
-    color:rgb(39, 23, 23);
-    font-family: "Courier New";
-    font-size: 22px;
-   
+    align-items: center;
+    height: 50px;
+    width: 150px;
 
 }
 
-body {
-    margin: 0px;
+li a {
+    display: flex;
+    justify-content: space-around;
+    color: #252537;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+li a:hover {
+    background-color: #111;
+    color: #fff;
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+li a:active {
+    background-color: rgb(120, 120, 243);
 }
