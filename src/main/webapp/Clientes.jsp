@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/Clientes.css">
+
 <meta charset="ISO-8859-1">
 <title>Clientes</title>
 </head>
 <body>
-<!--VARIABLES GLOBALES-->
+<!--VARIABLES GLOBALES ======================================================-->
 <%!	
 int buscar_cedula;
 String direccion_cliente="", email_cliente="", nombre_cliente="", telefono_cliente="";%>
@@ -25,31 +27,62 @@ if(request.getParameter("men")!=null){
 	out.print("<script type='text/javascript'>alert('"+mensaje+"');</script>");
 }
 %>
-<!--CÓDIGO DEL FORMULARIO-->
+<!--CÓDIGO DEL FORMULARIO ===================================================-->
 <h1>Clientes</h1>
 <form action="Clientes" method="post">
-<div><label>Cédula Cliente:</label><input type="number" name="cedula_cliente" pattern="[1-9]+" title="digite solo numeros" value="<%=buscar_cedula%>"></div>
-<div><label>Dirección Cliente:</label><input type="text" name="direccion_cliente" value="<%=direccion_cliente%>"></div>
-<div><label>Email Cliente:</label><input type="text" name="email_cliente" value="<%=email_cliente%>"></div>
-<div><label>Nombre del Cliente:</label><input type="text" name="nombre_cliente" value="<%=nombre_cliente%>"></div>
-<div><label>Teléfono del Cliente:</label><input type="number" name="telefono_cliente" value="<%=telefono_cliente%>"></div>
-
-<div><input type="submit" name="insertar" value="Registrar">
-
-<input type="submit" name="actualizar" value="Actualizar">
-<input type="submit" name="eliminar" value="Eliminar"></div>
+	<div class="form-clientes">
+	
+	<div class="informacion-form">
+	<label class="name-client">Cédula Cliente:</label>
+	<input class= "input-caja-texto" type="number" name="cedula_cliente"value="<%=buscar_cedula%>">
+	</div>
+	
+	<div class="informacion-form">
+	<label class="name-client">Dirección Cliente:</label>
+	<input class="input-caja-texto" type="text" name="direccion_cliente" value="<%=direccion_cliente%>">
+	</div>
+	
+	<div class="informacion-form">
+	<label class="name-client">Email Cliente:</label>
+	<input class="input-caja-texto" type="text" name="email_cliente" value="<%=email_cliente%>">
+	</div>
+	
+	<div class="informacion-form">
+	<label class="name-client">Nombre del Cliente:</label>
+	<input class="input-caja-texto" type="text" name="nombre_cliente" value="<%=nombre_cliente%>">
+	</div>
+	
+	<div class="informacion-form">
+	<label class="name-client">Teléfono del Cliente:</label>
+	<input class="input-caja-texto" type="number" name="telefono_cliente" value="<%=telefono_cliente%>">
+	</div>
+	<br>
+	
+	<div class="botones">
+	
+		<input class="btn-registrar" type="submit" name="insertar" value="Registrar">
+		<input class="btn-actualizar" type="submit" name="actualizar" value="Actualizar">
+		<input class="btn-eliminar" type="submit" name="eliminar" value="Eliminar">
+	</div>
+	
+	</div>
+	
 </form>
-<hr>
-<form action="Clientes" method="post">
 <!--BOTÓN PARA EL MÉTODO BUSQUEDA-->
-<fieldset>
-<legend>Consultar Cliente</legend>
-<div><label>Cédula Cliente:</label><input type="number" name="buscar_cedula">
-<input type="submit" name="consultar" value="Consultar"></div>
-</fieldset>
+<form action="Clientes" method="post">
+
+<div class="consultar">
+	<fieldset>
+		<legend>Consultar Cliente</legend>
+		<div>
+			<label>Cédula Cliente:</label>
+			<input class="input-caja-texto" type="number" name="buscar_cedula">
+			<input class="btn-consultar" type="submit" name="consultar" value="Consultar">
+		</div>
+	</fieldset>
+</div>
+
 </form>
-
-
 
 </body>
 </html>

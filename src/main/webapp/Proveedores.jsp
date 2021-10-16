@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Proveedores</title>
-
+		<link rel="stylesheet" href="css/Clientes.css">
 </head>
 <body>
-<!--VARIABLES GLOBALES-->
+<!--VARIABLES GLOBALES ======================================================-->
 <%!	
 int buscar_nit;
 String ciudad_proveedor="", direccion_proveedor="", nombre_proveedor="", telefono_proveedor="";%>
@@ -26,28 +26,62 @@ if(request.getParameter("men")!=null){
 	out.print("<script type='text/javascript'>alert('"+mensaje+"');</script>");
 }
 %>
+<!--CÓDIGO DEL FORMULARIO ===================================================-->
 <h1>Proveedores</h1>
 <form action="Proveedores" method="post">
-<div><label class="negrilla" >NIT Proveedor:</label><input type="number" name="nitproveedor" value="<%=buscar_nit%>"></div>
-<div><label class="negrilla" >Ciudad Proveedor:</label><input type="text" name="ciudad_proveedor" value="<%=ciudad_proveedor%>"></div>
-<div><label class="negrilla" >Dirección Proveedor:</label><input type="text" name="direccion_proveedor" value="<%=direccion_proveedor%>"></div>
-<div><label class="negrilla" >Nombre:</label><input type="text" name="nombre_proveedor" value="<%=nombre_proveedor%>"></div>
-<div><label class="negrilla" >Teléfono:</label><input type="number" name="telefono_proveedor" value="<%=telefono_proveedor%>"></div>
 
-<div>
-<input type="submit" name="insertar" value="Registrar">
+<div class="form-clientes">
 
-<input type="submit" name="actualizar" value="Actualizar">
-<input type="submit" name="eliminar" value="Eliminar"></div>
+<div class="informacion-form">
+<label class="name-client">NIT Proveedor:</label>
+<input class= "input-caja-texto"  type="number" name="nitproveedor" value="<%=buscar_nit%>">
+</div>
+
+<div class="informacion-form">
+<label class="name-client">Ciudad Proveedor:</label>
+<input class= "input-caja-texto"  type="text" name="ciudad_proveedor" value="<%=ciudad_proveedor%>">
+</div>
+
+<div class="informacion-form">
+<label class="name-client">Dirección Proveedor:</label>
+<input class= "input-caja-texto"  type="text" name="direccion_proveedor" value="<%=direccion_proveedor%>">
+</div>
+
+<div class="informacion-form">
+<label class="name-client">Nombre:</label>
+<input class= "input-caja-texto"  type="text" name="nombre_proveedor" value="<%=nombre_proveedor%>">
+</div>
+
+<div class="informacion-form">
+<label class="name-client">Teléfono:</label>
+<input class= "input-caja-texto"  type="number" name="telefono_proveedor" value="<%=telefono_proveedor%>">
+</div>
+<br>
+
+	<div class="botones">
+	
+		<input class="btn-registrar" type="submit" name="insertar" value="Registrar">
+		<input class="btn-actualizar" type="submit" name="actualizar" value="Actualizar">
+		<input class="btn-eliminar" type="submit" name="eliminar" value="Eliminar">
+	</div>
+	  
+</div>
+
 </form>
 <hr>
-<form action="Proveedores" method="post">
+
 <!--BOTÓN PARA EL MÉTODO BUSQUEDA-->
+<form action="Proveedores" method="post">
+
+<div class="consultar">
 <fieldset>
 <legend>Consultar Proveedor</legend>
-<div><label>NIT Proveedor:</label><input type="number" name="buscar_nit">
-<input type="submit" name="consultar" value="Consultar"></div>
+<div>
+<label>NIT Proveedor:</label>
+<input class="input-caja-texto" type="number" name="buscar_nit">
+<input class="btn-consultar" type="submit" name="consultar" value="Consultar"></div>
 </fieldset>
+</div>
 </form>
 
 </body>

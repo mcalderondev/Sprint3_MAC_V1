@@ -1,0 +1,90 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
+body {
+	background-image: url('../imagenes/background-Clientes.jpeg');
+	background-size:cover;
+    background-color: rgb(224, 222, 222);
+}
+h1 {
+	font-family:'Open Sans Condensed', sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 8px black;
+    color: #fff;
+    font-size: 50px;
+}
+
+form {
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
+    padding: 2%;
+    background-color: rgba(237, 252, 242, 0.5);
+    align-items: center;
+}
+
+.form-clientes, .consultar {
+    margin-right: 10px;
+    text-align: center;
+    font-family:'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-align: justify;
+    color: #252537;
+    padding: 14.5px 31px 15px 31px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.informacion-form {
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.input-caja-texto {
+	padding-left: 10px;
+	font-size: 16px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    outline: none;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.btn-registrar, .btn-actualizar, .btn-eliminar, .btn-consultar{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: space-around;
+    color: #252537;
+    width: 100px;
+    height: 30px;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    letter-spacing: 0.05em;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
+}
+
+.btn-registrar:hover, .btn-actualizar:hover, .btn-eliminar:hover, .btn-consultar:hover {
+    background-color: rgb(120, 120, 243);
+    color: #fff;
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 12px;
+}

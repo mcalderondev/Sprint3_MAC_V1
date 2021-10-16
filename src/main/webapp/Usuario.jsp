@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Usuario</title>
- <link rel="stylesheet" href="css/Usuario.css">
+		<link rel="stylesheet" href="css/Clientes.css">
 </head>
 <body class="fondo1" >
-<!--VARIABLES GLOBALES-->
+<!--VARIABLES GLOBALES-- ======================================================>
 <%!	
 int buscar_cedula;
 String email_usuario="", nombre_usuario="", password="", usuario="";%>
@@ -26,36 +26,63 @@ if(request.getParameter("men")!=null){
 	out.print("<script type='text/javascript'>alert('"+mensaje+"');</script>");
 }
 %>
-<h1>Usuarios</h1>
+<!--CÓDIGO DEL FORMULARIO ===================================================-->
+<h1>Usuarios</h1>		<!--  -->
 <form action="Usuario" method="post">
-<div class="texto_principal" ><label class="negrilla" >Cédula Usuario:</label><input class="caja_cedula_usuario" type="number" name="cedula_usuario" pattern="[1-9]+" title="digite solo numeros" value="<%=buscar_cedula%>"></div>
-<div class="texto_principal" ><label class="negrilla" >Email Usuario:</label><input class="caja_email_usuario" type="text" name="email_usuario" value="<%=email_usuario%>"></div>
-<div class="texto_principal" ><label class="negrilla" >Nombre Usuario:</label><input type="text" name="nombre_usuario" value="<%=nombre_usuario%>"></div>
-<div class="texto_principal" ><label class="negrilla" >Password:</label><input class="caja_password_usuario" type="password" name="password" value="<%=password%>"></div>
-<div class="texto_principal" ><label class="negrilla" >Usuario:</label><input class="caja_usuario" type="text" name="usuario" value="<%=usuario%>"></div>
 
-<div class="botones_usuario" ><input class="size_botones" type="submit" name="insertar" value="Registrar">
+<div class="form-clientes">
 
-<input type="submit" name="actualizar" value="Actualizar">
-<input type="submit" name="eliminar" value="Eliminar"></div>
+	<div class="informacion-form">
+	<label class="name-client">Cédula Usuario:</label>
+	<input class= "input-caja-texto" type="number" name="cedula_usuario"value="<%=buscar_cedula%>">
+	</div>
+
+	<div class="informacion-form">
+	<label class="name-client">Email Usuario:</label>
+	<input class= "input-caja-texto" type="email" name="email_usuario" value="<%=email_usuario%>">
+	</div>
+	
+	<div class="informacion-form">
+	<label class="name-client">Nombre Usuario:</label>
+	<input class= "input-caja-texto" type="text" name="nombre_usuario" value="<%=nombre_usuario%>">
+	</div>
+
+	<div class="informacion-form">
+	<label class="name-client">Password:</label>
+	<input class= "input-caja-texto" type="password" name="password" value="<%=password%>">
+	</div>
+
+	<div class="informacion-form">
+	<label class="name-client">Usuario:</label>
+	<input class= "input-caja-texto" type="text" name="usuario" value="<%=usuario%>">
+	</div>
+	<br>
+	
+	<div class="botones">
+	
+		<input class="btn-registrar" type="submit" name="insertar" value="Registrar">
+		<input class="btn-actualizar" type="submit" name="actualizar" value="Actualizar">
+		<input class="btn-eliminar" type="submit" name="eliminar" value="Eliminar">
+	</div>
+	  
+</div>
+
 </form>
 <hr>
+<!--BOTÓN PARA EL MÉTODO BUSQUEDA	=========================================-->
 <form action="Usuario" method="post">
 
+<div class="consultar">
 <fieldset>
 <legend>Consultar Usuario</legend>
-<div><label>Cédula Usuario:</label><input type="number" name="buscar_cedula">
-<input type="submit" name="consultar" value="Consultar"></div>
+<div>
+	<label>Cédula Usuario:</label>
+	<input class="input-caja-texto" type="number" name="buscar_cedula">
+	<input class="btn-consultar" type="submit" name="consultar" value="Consultar">
+	</div>
+
 </fieldset>
+</div>
 </form>
-
-<!-- 
-<form action="Producto" method="post" enctype="multipart/form-data">
-<div><label>Archivo: </label><input type="file" name="archivo" value="Examinar"></div>
-<input type="submit" name="cargar" value="Cargar Archivo">
-</form>
-
--->
-
 </body>
 </html>
