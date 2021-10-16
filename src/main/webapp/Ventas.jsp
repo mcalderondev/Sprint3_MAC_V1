@@ -44,7 +44,7 @@ if(request.getParameter("men")!=null){
 <input type="submit" name="consultar_codigo" value="Consultar Producto">
 <label>Nombre producto:  </label><input type="text" name="nombre_producto" value="<%=nombre_producto%>">
 <label>Cantidad:  </label><input type="number" name="cantidad" value="cantidad">
-<label>Vlr. Total:  </label><input type="number" name="valor_total">
+//<label>Vlr. Total:  </label><input type="number" name="valor_total">
 
 </div>
 </form>

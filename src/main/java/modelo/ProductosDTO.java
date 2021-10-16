@@ -52,5 +52,6 @@ public class ProductosDTO {
 	public void setNombre_producto(String nombre_producto) {
 		this.nombre_producto = nombre_producto;
 	}
+	
 //==============================================================================
 }

@@ -4,6 +4,7 @@ public class VentasDTO {
 	private int codigo_venta, cedula_cliente, cedula_usuario, codigo_producto;
 	private String nombre_cliente, nombre_producto;
 	private double ivaventa, total_venta, valor_venta;
+	
 	//==========================================================================
 	
 	public int getCodigo_venta() {

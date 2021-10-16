@@ -19,6 +19,7 @@ public class Ventas extends HttpServlet {
     public Ventas() {
         super(); 
     }
+    
 //==============================================================================
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

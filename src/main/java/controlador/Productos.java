@@ -18,9 +18,7 @@ import modelo.ProductosDAO;
 import modelo.ProductosDTO;
 import modelo.ProveedoresDTO;
 
-/**
- * Servlet implementation class Productos
- */
+
 @WebServlet("/Productos")
 @MultipartConfig
 public class Productos extends HttpServlet {

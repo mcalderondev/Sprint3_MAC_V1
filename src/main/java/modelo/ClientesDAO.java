@@ -16,7 +16,7 @@ public class ClientesDAO {
 	PreparedStatement ps=null;
 	ResultSet res=null;
 	//==========================================================================
-	// METODO INSERTAR CLIENTE OK
+	// METODO INSERTAR CLIENTE
 	//==========================================================================
 	public boolean InsertarCliente(ClientesDTO cliente) {
 		boolean res=false;
