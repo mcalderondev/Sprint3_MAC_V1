@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -87,5 +88,27 @@ public class ClientesDAO {
 		}
 		return result;
 	}
+	//==========================================================================
+	// CREAR LISTADO CLIENTES
+	//==========================================================================
+	
+	public ArrayList<ClientesDTO> ListadoClientes(){
+		
+		ClientesDTO cliente=null;
+		ArrayList<ClientesDTO> listado = new ArrayList<>();
+		try {
+			String sql="select * from clientes";
+			ps=con.prepareStatement(sql);
+			res=ps.executeQuery();
+			while(res.next()) {
+				cliente=new ClientesDTO(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+				listado.add(cliente);
+			}
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
+		}
+		return listado;
+	}
+//==============================================================================
 
 }
