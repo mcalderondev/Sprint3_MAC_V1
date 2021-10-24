@@ -69,6 +69,38 @@ function ListaClientes(){
 		}
 	})
 	}
+//==============================================================================
+//		LISTA VENTAS
+//==============================================================================
+function ListaVentas(){
+	
+	$.ajax({
+		type:"post",
+		url:"Reportes",
+		dataType:"json",
+		data:{opcion:"ventas"},
+		success: function(result){
+			console.log(result)
+			var tabla=document.querySelector(".tabla")
+			tabla.innerHTML=''
+			
+			tabla.innerHTML+=`<tr>
+			<th>Codigo Venta</th>
+			<th>Cedula Cliente</th>
+			<th>Valor Total Venta</th>		
+			</tr>`
+			for(let fila of result){
+				tabla.innerHTML+=`<tr>
+				<td>${fila.codigo_venta}</td>
+				<td>${fila.cedula_cliente}</td>
+				<td>${fila.valor_venta}</td>
+
+				</tr>`
+			}
+		}
+	})
+	}
+
 ////////////////////////////////////////////////////////////////////////////////
 $('.usuarios').on('click',function(){
 	
@@ -80,6 +112,12 @@ $('.clientes').on('click',function(){
 		ListaClientes()
 	})
 	
+$('.ventas').on('click',function(){
+	
+		ListaVentas()
+	})	
+	
+
 	})
 
 	

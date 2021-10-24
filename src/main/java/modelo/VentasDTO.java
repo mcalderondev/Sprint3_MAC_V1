@@ -1,22 +1,23 @@
 package modelo;
 
 public class VentasDTO {
-	private int codigo_venta, cedula_cliente, cedula_usuario, codigo_producto;
-	private String nombre_cliente, nombre_producto;
-	private double ivaventa, total_venta, valor_venta;
-	
+	private int codigo_venta,cedula_cliente,cedula_usuario;
+	private String nombre_cliente,nombre_producto;
+	private double ivaventa,total_venta,valor_venta;
 	//==========================================================================
-	
-	public int getCodigo_venta() {
-		return codigo_venta;
-	}
-	public VentasDTO(int cedula_cliente, int cedula_usuario, int codigo_producto, double valor_venta) {
-		
+	public VentasDTO(int codigo_venta, int cedula_cliente, int cedula_usuario, double ivaventa, double total_venta,
+			double valor_venta) {
+		super();
+		this.codigo_venta = codigo_venta;
 		this.cedula_cliente = cedula_cliente;
 		this.cedula_usuario = cedula_usuario;
-		this.codigo_producto = codigo_producto;
+		this.ivaventa = ivaventa;
+		this.total_venta = total_venta;
 		this.valor_venta = valor_venta;
-	//==========================================================================		
+	}
+//==============================================================================	
+	public int getCodigo_venta() {
+		return codigo_venta;
 	}
 	public void setCodigo_venta(int codigo_venta) {
 		this.codigo_venta = codigo_venta;
@@ -32,12 +33,6 @@ public class VentasDTO {
 	}
 	public void setCedula_usuario(int cedula_usuario) {
 		this.cedula_usuario = cedula_usuario;
-	}
-	public int getCodigo_producto() {
-		return codigo_producto;
-	}
-	public void setCodigo_producto(int codigo_producto) {
-		this.codigo_producto = codigo_producto;
 	}
 	public String getNombre_cliente() {
 		return nombre_cliente;
@@ -69,5 +64,5 @@ public class VentasDTO {
 	public void setValor_venta(double valor_venta) {
 		this.valor_venta = valor_venta;
 	}
-	//==========================================================================
+//==============================================================================
 }
