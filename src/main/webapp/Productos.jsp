@@ -8,18 +8,20 @@
 <title>Productos</title>
 </head>
 <body>
-<%!	
-int buscar_cod_producto, iva_compra, nitproveedor, precio_compra, precio_venta;
-String nombre_producto="";%>
-<%
-if(request.getParameter("buscar_cod_producto")!=null){
+<%!	//	VARIABLES GLOBALES	====================================================
+int codigo_producto,nitproveedor;
+String nombre_producto="";
+double ivacompra,precio_compra,precio_venta;%>
 
-buscar_cod_producto=Integer.parseInt(request.getParameter("buscar_cod_producto"));
-iva_compra=Integer.parseInt(request.getParameter("iva_compra"));
+<%
+if(request.getParameter("codigo_producto")!=null){
+
+codigo_producto=Integer.parseInt(request.getParameter("codigo_producto"));
+ivacompra=Double.parseDouble(request.getParameter("ivacompra"));
 nitproveedor=Integer.parseInt(request.getParameter("nitproveedor"));
-precio_compra=Integer.parseInt(request.getParameter("precio_compra"));
-precio_venta=Integer.parseInt(request.getParameter("precio_venta"));
 nombre_producto=request.getParameter("nombre_producto");
+precio_compra=Double.parseDouble(request.getParameter("precio_compra"));
+precio_venta=Double.parseDouble(request.getParameter("precio_venta"));
 }
 if(request.getParameter("men")!=null){
 	String mensaje=request.getParameter("men");
@@ -33,13 +35,13 @@ if(request.getParameter("men")!=null){
 
 <div class="informacion-form">
 		<label class="name-client">Codigo Producto:</label>
-		<input class= "input-caja-texto" type="number" name="codigo_producto" value="<%=buscar_cod_producto%>">
+		<input class= "input-caja-texto" type="number" name="codigo_producto" value="<%=codigo_producto%>">
 </div>
 
 
 <div class="informacion-form">
 		<label class="name-client">IVA:</label>
-		<input class= "input-caja-texto" type="number" name="iva_compra" value="<%=iva_compra%>">
+		<input class= "input-caja-texto" type="number" name="iva_compra" value="<%=ivacompra%>">
 </div>
 
 <div class="informacion-form">
@@ -84,7 +86,7 @@ if(request.getParameter("men")!=null){
 		<legend>Consultar Producto</legend>
 <div>
 		<label>Codigo Producto:</label>
-		<input class="input-caja-texto type="number" name="buscar_cod_producto">
+		<input class="input-caja-texto" type="number" name="<%=codigo_producto%>">
 		<input class="btn-consultar" type="submit" name="consultar" value="Consultar">
 	</div>
 </fieldset>
