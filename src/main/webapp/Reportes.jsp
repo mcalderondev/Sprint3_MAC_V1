@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/Clientes.css">
+<link rel="stylesheet" href="css/Reportes.css">
 
 <meta charset="ISO-8859-1">
 

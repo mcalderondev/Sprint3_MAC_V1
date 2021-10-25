@@ -1,6 +1,6 @@
 package controlador;
 
-import javax.swing.JOptionPane;
+
 import java.sql.*;
 
 public class conexion {
@@ -14,9 +14,9 @@ public class conexion {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(url,login,password);
-			JOptionPane.showMessageDialog(null,"Conexion OK");
+			//JOptionPane.showMessageDialog(null,"Conexion OK");
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null,"Error al conectar la base de datos"+e);
+			//JOptionPane.showMessageDialog(null,"Error al conectar la base de datos"+e);
 		}
 		return con;
 	}

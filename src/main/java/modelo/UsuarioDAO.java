@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import controlador.conexion;
 
 public class UsuarioDAO {
@@ -31,7 +29,7 @@ public class UsuarioDAO {
 			ps.setString(5,user.getUsuario());
 			res=ps.executeUpdate()>0;
 		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo agregar el usuario"+ex);
+			//JOptionPane.showMessageDialog(null, "No se pudo agregar el usuario"+ex);
 		}
 		return res;
 	}
@@ -49,7 +47,7 @@ public class UsuarioDAO {
 				user=new UsuarioDTO(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 			}
 		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo consultar el usuario"+ex);
+			//JOptionPane.showMessageDialog(null, "No se pudo consultar el usuario"+ex);
 		}
 		return user;
 	}
@@ -69,7 +67,7 @@ public class UsuarioDAO {
 			ps.setInt(5, user.getCedula_usuario());
 			result=ps.executeUpdate()>0;
 		}catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
 			
 		}
 		return result;
@@ -85,7 +83,7 @@ public class UsuarioDAO {
 			ps.setInt(1,cedula_usuario);
 			result=ps.executeUpdate()>0;
 		}catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al eliminar"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al eliminar"+ex);
 		}
 		return result;
 	}
@@ -106,7 +104,7 @@ public class UsuarioDAO {
 				lista.add(user);
 			}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
 		}
 		return lista;
 	}

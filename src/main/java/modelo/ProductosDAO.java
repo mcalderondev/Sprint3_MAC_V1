@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
 
 import controlador.conexion;
 
@@ -26,7 +25,7 @@ public class ProductosDAO {
 		result=ps.executeUpdate()>0;
 		
 		}catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null,"Error al registrar productos"+ ex);
+			//JOptionPane.showMessageDialog(null,"Error al registrar productos"+ ex);
 		}
 		
 		return result;
@@ -46,7 +45,7 @@ try {
 		producto=new ProductosDTO(res.getInt(1),res.getDouble(2),res.getInt(3),res.getString(4),res.getDouble(5),res.getDouble(6));
 	}
 }catch(SQLException ex){
-	JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente"+ex);
+	//JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente"+ex);
 }
 return producto;
 }
@@ -67,7 +66,7 @@ return producto;
 
 			result=ps.executeUpdate()>0;
 		}catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
 			
 		}
 		return result;

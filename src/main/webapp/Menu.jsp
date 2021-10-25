@@ -32,6 +32,9 @@
                     <li> 
                         <a href="Ventas.jsp">Ventas</a> 
                     </li>
+                    <li> 
+                        <a href="Reportes.jsp">Reportes</a> 
+                    </li>
 </ul>
 </nav>   
 </header>

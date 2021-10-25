@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
+
 
 import modelo.UsuarioDAO;
 import modelo.UsuarioDTO;
@@ -34,10 +34,10 @@ public class Usuario extends HttpServlet {
 			usuario=request.getParameter("usuario");
 			UsuarioDTO userDto=new UsuarioDTO(cedula_usuario,email_usuario,nombre_usuario,password,usuario);
 			if (userDao.InsertarUsuario(userDto)) {
-				JOptionPane.showMessageDialog(null,"Registro exitoso");
+				//JOptionPane.showMessageDialog(null,"Registro exitoso");
 				response.sendRedirect("Usuario.jsp");//	redireccionar pagina
 			}else {
-				JOptionPane.showMessageDialog(null,"No se ha registrado el Usuario");
+				//JOptionPane.showMessageDialog(null,"No se ha registrado el Usuario");
 				response.sendRedirect("Usuario.jsp");
 			}
 		}
@@ -78,10 +78,10 @@ public class Usuario extends HttpServlet {
 			usuario=request.getParameter("usuario");
 			UsuarioDTO userDto=new UsuarioDTO(cedula_usuario,email_usuario,nombre_usuario,password,usuario);
 			if(userDao.ActualizarUsuario(userDto)) {
-				JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Usuario.");
+				//JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Usuario.");
 				response.sendRedirect("Usuario.jsp?men=Se han actualizado los datos del Usuario.");
 			}else {
-				JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Usuario.");
+				//JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Usuario.");
 				response.sendRedirect("Usuario.jsp?men=No se pudo modificar los datos del Usuario.");
 
 			}
@@ -92,8 +92,8 @@ public class Usuario extends HttpServlet {
 		if (request.getParameter("eliminar")!=null) {
 			int cedula_usuario;
 			cedula_usuario=Integer.parseInt(request.getParameter("cedula_usuario"));
-			int op=JOptionPane.showConfirmDialog(null, "�Desea eliminar este usuario?");
-			if(op==0) {
+			//int op=JOptionPane.showConfirmDialog(null, "¿Desea eliminar este usuario?");
+			if(request.getParameter("eliminar")!=null) {
 				if (userDao.EliminarUsuario(cedula_usuario)) {
 					response.sendRedirect("Usuario.jsp?men=Usuario eliminado.");
 				}else {

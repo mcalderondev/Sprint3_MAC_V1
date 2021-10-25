@@ -93,8 +93,9 @@ public class Clientes extends HttpServlet {
 		if (request.getParameter("eliminar")!=null) {
 			int cedula_cliente;
 			cedula_cliente=Integer.parseInt(request.getParameter("cedula_cliente"));
-			int op=JOptionPane.showConfirmDialog(null, "¿Desea eliminar este cliente?");
-			if(op==0) {
+			//int op=JOptionPane.showConfirmDialog(null, "¿Desea eliminar este cliente?");
+			//if(op==0) {
+			if(request.getParameter("eliminar")!=null) {
 				if (clienteDao.EliminarCliente(cedula_cliente)) {
 					response.sendRedirect("Clientes.jsp?men=Cliente eliminado.");
 				}else {

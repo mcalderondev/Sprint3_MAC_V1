@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 
 @WebServlet("/login")
@@ -31,8 +30,8 @@ public class login extends HttpServlet {
 				//JOptionPane.showMessageDialog(null, "Bienvenido");
 				response.sendRedirect("Menu.jsp");
 			}else {
-				JOptionPane.showMessageDialog(null, "Usuario o contraseña errados,\r\n"
-						+ "intente de nuevo.\r\n");
+				//JOptionPane.showMessageDialog(null, "Usuario o contraseña errados,\r\n"
+				//		+ "intente de nuevo.\r\n");
 				response.sendRedirect("index.jsp");
 			}
 		}

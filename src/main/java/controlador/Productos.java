@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import javax.swing.JOptionPane;
 
 import modelo.ProductosDAO;
 import modelo.ProductosDTO;
@@ -44,15 +43,15 @@ public class Productos extends HttpServlet {
 //==============================================================================		
 		if (request.getParameter("cargar")!=null) {
 			
-			JOptionPane.showMessageDialog(null, "PRUEBA");
+			//JOptionPane.showMessageDialog(null, "PRUEBA");
 			ProductosDAO prodDAO= new ProductosDAO();
 			Part archivo=request.getPart("archivo");
 			String Url= "/Users/mcalderon/Documents/MINTIC/CICLO 3/equipo04_grupo08-main/Tienda Generica v1/src/main/webapp/Documentos/";
 		
 		//if(archivo.getContentType().equals("application/vnd.ms-excel"))	//USAR ESTA LINEA EN WINDOWS{
 			if(archivo.getContentType().equals("text/csv")) { // USAR ESTA LINEA EN MAC
-			JOptionPane.showMessageDialog(null, archivo.getContentType());
-			JOptionPane.showMessageDialog(null, "PRUEBA 2");	
+			//JOptionPane.showMessageDialog(null, archivo.getContentType());
+			//JOptionPane.showMessageDialog(null, "PRUEBA 2");	
 		try {
 			InputStream file= archivo.getInputStream();
 			File copia = new File (Url+"prueba08.csv");
@@ -64,7 +63,7 @@ public class Productos extends HttpServlet {
 			}
 			file.close();
 			escribir.close();
-			JOptionPane.showMessageDialog(null, "Se cargo el archivo correctamente");
+			//JOptionPane.showMessageDialog(null, "Se cargo el archivo correctamente");
 			if (prodDAO.Cargar_Productos(Url+"prueba08.csv")) {
 				response.sendRedirect("Productos.jsp?men=Se registraron los productos correctamente");
 			}else
@@ -72,7 +71,7 @@ public class Productos extends HttpServlet {
 				response.sendRedirect("Productos.jsp?men=No se registraron los productos");
 			}
 			}catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al cargar el archivo correctamente"+e);
+				//JOptionPane.showMessageDialog(null, "Error al cargar el archivo correctamente"+e);
 				response.sendRedirect("Productos.jsp?men=Error al cargar el archivo correctamente");
 				
 			}

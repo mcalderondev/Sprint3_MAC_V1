@@ -16,6 +16,8 @@ import modelo.ClientesDAO;
 import modelo.ClientesDTO;
 import modelo.UsuarioDAO;
 import modelo.UsuarioDTO;
+import modelo.VentasDAO;
+import modelo.VentasDTO;
 
 @WebServlet("/Reportes")
 public class Reportes extends HttpServlet {
@@ -50,6 +52,12 @@ public class Reportes extends HttpServlet {
 		}
 		
 //==============================================================================
+	if(op.equals("ventas")) {
+		VentasDAO ventasDao = new VentasDAO();
+		ArrayList<VentasDTO> lista=new ArrayList<>();
+		lista=ventasDao.ListadoVentas();
+		salida.println(datos.toJson(lista));
 	}
 
+}
 }

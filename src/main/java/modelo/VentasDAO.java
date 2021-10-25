@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 
 import controlador.conexion;
 
@@ -33,7 +32,7 @@ public class VentasDAO {
 			res=ps.executeUpdate()>0;
 						
 		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo registrar la venta"+ex);
+			//JOptionPane.showMessageDialog(null, "No se pudo registrar la venta"+ex);
 		}
 		return res;
 	}
@@ -55,7 +54,7 @@ public class VentasDAO {
 			res=ps.executeUpdate()>0;
 						
 		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo registrar los detalles de venta"+ex);
+			//JOptionPane.showMessageDialog(null, "No se pudo registrar los detalles de venta"+ex);
 		}
 		return res;
 	}
@@ -76,7 +75,7 @@ public class VentasDAO {
 					listado.add(venta);
 				}
 			}catch(SQLException ex) {
-				JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
+				//JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
 			}
 			return listado;
 		}

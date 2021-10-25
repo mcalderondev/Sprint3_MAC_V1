@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+
 
 import controlador.conexion;
 
@@ -31,7 +31,7 @@ public class ClientesDAO {
 			ps.setString(5,cliente.getTelefono_cliente());
 			res=ps.executeUpdate()>0;
 		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo agregar al cliente"+ex);
+			//JOptionPane.showMessageDialog(null, "No se pudo agregar al cliente"+ex);
 		}
 		return res;
 	}
@@ -49,7 +49,7 @@ public class ClientesDAO {
 				cliente=new ClientesDTO(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 			}
 		}catch(SQLException ex){
-			JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente"+ex);
+			//JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente"+ex);
 		}
 		return cliente;
 	}
@@ -68,7 +68,7 @@ public class ClientesDAO {
 			ps.setInt(5, cliente.getCedula_cliente());
 			result=ps.executeUpdate()>0;
 		}catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al actualizar"+ex);
 			
 		}
 		return result;
@@ -84,7 +84,7 @@ public class ClientesDAO {
 			ps.setInt(1,cedula_cliente);
 			result=ps.executeUpdate()>0;
 		}catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al eliminar"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al eliminar"+ex);
 		}
 		return result;
 	}
@@ -105,7 +105,7 @@ public class ClientesDAO {
 				listado.add(cliente);
 			}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
+			//JOptionPane.showMessageDialog(null, "Error al cargar la lista"+ex);
 		}
 		return listado;
 	}

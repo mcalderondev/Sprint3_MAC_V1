@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
+
 
 import modelo.ProveedoresDAO;
 import modelo.ProveedoresDTO;
@@ -34,10 +34,10 @@ public class Proveedores extends HttpServlet {
 			telefono_proveedor=request.getParameter("telefono_proveedor");
 			ProveedoresDTO provDto=new ProveedoresDTO(nitproveedor,ciudad_proveedor,direccion_proveedor,nombre_proveedor,telefono_proveedor);
 			if (provDao.InsertarProveedor(provDto)) {
-				JOptionPane.showMessageDialog(null,"Registro exitoso");
+				//JOptionPane.showMessageDialog(null,"Registro exitoso");
 				response.sendRedirect("Proveedores.jsp");//	redireccionar pagina
 			}else {
-				JOptionPane.showMessageDialog(null,"No se ha registrado al Proveedor");
+				//JOptionPane.showMessageDialog(null,"No se ha registrado al Proveedor");
 				response.sendRedirect("Proveedores.jsp");
 			}
 		}	
@@ -78,10 +78,10 @@ public class Proveedores extends HttpServlet {
 			telefono_proveedor=request.getParameter("telefono_proveedor");
 			ProveedoresDTO provDto=new ProveedoresDTO(nitproveedor,ciudad_proveedor,direccion_proveedor,nombre_proveedor,telefono_proveedor);
 			if(provDao.ActualizarProveedor(provDto)) {
-				JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Proveedor.");
+				//JOptionPane.showMessageDialog(null,"Se han actualizado los datos del Proveedor.");
 				response.sendRedirect("Proveedores.jsp?men=Se han actualizado los datos del Proveedor.");
 			}else {
-				JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Proveedor.");
+				//JOptionPane.showMessageDialog(null,"No se pudo modificar los datos del Proveedor.");
 				response.sendRedirect("Proveedores.jsp?men=No se pudo modificar los datos del Proveedor.");
 					}
 				}
@@ -91,8 +91,9 @@ public class Proveedores extends HttpServlet {
 		if (request.getParameter("eliminar")!=null) {
 			int nitproveedor;
 			nitproveedor=Integer.parseInt(request.getParameter("nitproveedor"));
-			int op=JOptionPane.showConfirmDialog(null, "¿Desea eliminar este proveedor?");
-			if(op==0) {
+			//int op=JOptionPane.showConfirmDialog(null, "ï¿½Desea eliminar este proveedor?");
+			//if(op==0) {
+			if(request.getParameter("eliminar")!=null) {
 				if (provDao.EliminarProveedor(nitproveedor)) {
 					response.sendRedirect("Proveedores.jsp?men=Proveedor eliminado.");
 				}else {
