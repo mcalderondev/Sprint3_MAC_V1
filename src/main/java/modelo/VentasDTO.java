@@ -5,10 +5,9 @@ public class VentasDTO {
 	private String nombre_cliente,nombre_producto;
 	private double ivaventa,total_venta,valor_venta;
 	//==========================================================================
-	public VentasDTO(int codigo_venta, int cedula_cliente, int cedula_usuario, double ivaventa, double total_venta,
+	public VentasDTO(int cedula_cliente, int cedula_usuario, double ivaventa, double total_venta,
 			double valor_venta) {
-		super();
-		this.codigo_venta = codigo_venta;
+
 		this.cedula_cliente = cedula_cliente;
 		this.cedula_usuario = cedula_usuario;
 		this.ivaventa = ivaventa;

@@ -22,14 +22,14 @@ public class VentasDAO {
 	public boolean RegistrarVenta(VentasDTO venta) {
 		boolean res=false;
 		try {
-			String sql="insert into ventas values (?,?,?,?,?,?)";
+			String sql="insert into ventas values (?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1,venta.getCodigo_venta());
-			ps.setInt(2,venta.getCedula_cliente());
-			ps.setInt(3,venta.getCedula_usuario());
-			ps.setDouble(4,venta.getIvaventa());
-			ps.setDouble(5,venta.getTotal_venta());
-			ps.setDouble(6,venta.getValor_venta());
+			//ps.setString(1,null);
+			ps.setInt(1,venta.getCedula_cliente());
+			ps.setInt(2,venta.getCedula_usuario());
+			ps.setDouble(3,venta.getIvaventa());
+			ps.setDouble(4,venta.getTotal_venta());
+			ps.setDouble(5,venta.getValor_venta());
 			res=ps.executeUpdate()>0;
 						
 		}catch(SQLException ex){
@@ -45,10 +45,10 @@ public class VentasDAO {
 		try {
 			String sql="insert into detalle_ventas values (?,?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1,detalleventa.getCodigo_detalle_venta());
+			ps.setString(1,null);
 			ps.setInt(2,detalleventa.getCantidad_producto());
 			ps.setInt(3,detalleventa.getCodigo_producto());
-			ps.setInt(4,detalleventa.getCodigo_venta());
+			ps.setString(4,null);
 			ps.setDouble(5,detalleventa.getValor_total());
 			ps.setDouble(6,detalleventa.getValor_venta());
 			ps.setDouble(7,detalleventa.getValoriva());
@@ -72,7 +72,7 @@ public class VentasDAO {
 				ps=con.prepareStatement(sql);
 				res=ps.executeQuery();
 				while(res.next()) {
-					venta=new VentasDTO(res.getInt(1),res.getInt(2),res.getInt(3),res.getDouble(4),res.getDouble(5),res.getDouble(6));
+					venta=new VentasDTO(res.getInt(1),res.getInt(2),res.getDouble(3),res.getDouble(4),res.getDouble(5));
 					listado.add(venta);
 				}
 			}catch(SQLException ex) {
@@ -82,3 +82,4 @@ public class VentasDAO {
 		}
 //==============================================================================
 }
+
