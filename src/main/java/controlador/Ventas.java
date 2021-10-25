@@ -28,7 +28,7 @@ public class Ventas extends HttpServlet {
 	VentasDAO registroVenta = new VentasDAO();
 		
 //==============================================================================
-				///CONSULTAR PRODUCTO
+				//CONSULTAR PRODUCTO
 //==============================================================================
 		if (request.getParameter("consultar_cedula")!=null){
 			int cedula_cliente=Integer.parseInt(request.getParameter("cedula_cliente"));
