@@ -5,13 +5,12 @@ public class DetalleVentasDTO {
 	private int codigo_detalle_venta,cantidad_producto,codigo_producto,codigo_venta;	
 	private double valor_total,valor_venta,valoriva;
 //==============================================================================
-	public DetalleVentasDTO(int codigo_detalle_venta, int cantidad_producto, int codigo_producto, int codigo_venta,
-			double valor_total, double valor_venta, double valoriva) {
-		super();
-		this.codigo_detalle_venta = codigo_detalle_venta;
+	public DetalleVentasDTO(int cantidad_producto, int codigo_producto,
+		double valor_total, double valor_venta, double valoriva) {
+		
 		this.cantidad_producto = cantidad_producto;
 		this.codigo_producto = codigo_producto;
-		this.codigo_venta = codigo_venta;
+
 		this.valor_total = valor_total;
 		this.valor_venta = valor_venta;
 		this.valoriva = valoriva;
